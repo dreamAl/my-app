@@ -1,0 +1,4 @@
+projects/node_modules/
+projects/package.json
+projects/package-lock.json
+projects/items/node_modules
