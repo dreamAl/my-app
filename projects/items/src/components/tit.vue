@@ -1,12 +1,16 @@
 <template>
-  <div class="box">
+<div>
+<router-link to="/cont">
+    <div class="box">
       <div class="left">
-        <h1>我是标题</h1>
-        <p>我是内容</p>
+        <h3>奇妙的不确定性 Intriguing Uncertainties</h3>
+        <p>展览“奇妙的不确定性”旨在强调当代艺术中某些特定叙事的重要性</p>
       </div>   
         <img src="../../static/img/1.jpg" alt="">
         <span>展览</span>
-  </div>
+    </div>
+</router-link>   
+</div>
 </template>
 <script>
 export default {
@@ -21,25 +25,30 @@ export default {
     border-bottom:0.01rem solid #ccc;
 }
 .left{
+    width: 1.8rem;
    float:left;
    margin-left: 0.3rem;
 }
-.left>h1{
-    font-size: 0.17rem;
+.left>h3{
+    font-size: 0.15rem;
+    color:#494949;
+    font-weight: 100;
 }
 .left>p{
-    font-size: 0.12rem;
+    margin-top:0.1rem;
+    font-size: 0.11rem;
+    color:#AAAAAA;
 }
 
 img{
     float:right;
-    width:25%;
-    height:1rem;
-    margin-right: 0.4rem;
+    width:0.65rem;
+    height:0.8rem;
+    margin-right: 0.2rem;
 }
 span{
     font-size: 0.12rem;
     color:#ccc;
-    margin-left: -0.7rem;
+    margin-left: -1.8rem;
 }
 </style>

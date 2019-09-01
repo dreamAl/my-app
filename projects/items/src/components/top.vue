@@ -18,13 +18,20 @@ export default {
 div{
   width: 100%;
   height:0.6rem;
-  border-bottom:#ccc 0.01rem solid ;
+  position: fixed;;
+  right:0;
+  left:0;
+  top:0;
+  background:white;
+  border-bottom:#ccc 0.01rem solid ;  
 }
  div>a:nth-of-type(1){
    font-size: 0.3rem;
    font-weight: 700;
    color:#00b600;
    margin-left: 0.2rem;
+   display:inline-block;
+   margin-top:0.1rem;
  }
  div>a:nth-of-type(2){
    font-size: 0.15rem;
@@ -51,7 +58,7 @@ div{
  }
  a>img{
     width:0.25rem;
-   height:0.25rem;
+   height:0.2rem;
    vertical-align: middle;
  }
 </style>

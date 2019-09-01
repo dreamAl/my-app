@@ -54,7 +54,15 @@ export default {
             (ok)=>{      
               localStorage.setItem("token",ok.data.token)
               // console.log(ok)
-              this.$router.push("/index")
+              var i = 4;
+                  var mytimer = setInterval(()=>{
+                      i--;
+                      if(i == 0){
+                          clearInterval(mytimer);
+                         this.$router.push("/index")
+                      }
+                      this.text = "登录成功"+i+"秒后跳转";
+                    },1000)
               }) 
           }
         }
@@ -115,7 +123,7 @@ export default {
     }
     .tishi{
         width: 100%;
-        font-size: .2rem;
+        font-size: 0.16rem;
         color: red;
         text-align: center;
         position: absolute;

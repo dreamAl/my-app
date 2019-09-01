@@ -11,14 +11,16 @@ import team from '../douban/team'
 import icon from '../douban/icon'
 import usa from '../douban/usa'
 import news from '../douban/news'
+import cont from '../douban/cont'
+// import clear from '../douban/clear'
 
 Vue.use(Router)
 export default new Router({
   routes: [
-    // {
-    //   path: '/',
-    //   redirect:"/reg"
-    // },
+    {
+      path: '/',
+      redirect:"/index"
+    },
     {
       path: '/login',
       name: 'login',
@@ -69,5 +71,15 @@ export default new Router({
       name: 'news',
       component: news
     },  
+    {
+      path: '/cont',
+      name: 'cont',
+      component: cont
+    }, 
+    // {
+    //   path: '/clear',
+    //   name: 'clear',
+    //   component: clear
+    // }, 
   ]
 })

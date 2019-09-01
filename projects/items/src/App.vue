@@ -22,4 +22,7 @@ html{
 a{
   text-decoration: none;
 }
+ul li{
+  list-style:none;
+}
 </style>
