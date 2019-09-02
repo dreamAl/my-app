@@ -7,10 +7,8 @@ import router from './router'
 import axios from 'axios'
 Vue.prototype.axios = axios
 
-require("./mock")
-
 Vue.config.productionTip = false
-
+require("./mock")
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
