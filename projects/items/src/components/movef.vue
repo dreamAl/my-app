@@ -4,23 +4,25 @@
             <span>影院热映</span>
             <a href="#">更多</a>
         </div>
-        <dir class="xh">
-            <movez v-for="(v, i) in fuprops" :key="i"   ></movez>      
-        </dir>                    
+        <div class="xh"  >
+            <movez  v-for="(v, i) in fuprops" :key="i" :zp="v.film_name"  :zimgurl="v.film_img" ></movez>     
+            <!-- <movez></movez> -->
+        </div>                    
     </div>
 </template>
 <script>
 import movez from './movez'
-export default { 
+export default {   
     components:{
         movez
     },
-    props:{
-        fuprops:{
-            type:Array,
-            required:true
-        }
-    }
+    props:["fuprops"]
+    // props:{
+    //     fuprops:{
+    //         type:Array,
+    //         required:true
+    //     }
+    // }
 }
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->

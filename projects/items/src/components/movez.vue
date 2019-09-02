@@ -1,8 +1,9 @@
 <template>
 <div class="ziBox">
     <div class="divBox">
-        <img src="../../static/img/10.jpg" alt="">
-        <span>无问西东</span>
+        <!-- <img src="../../static/img/10.jpg" alt=""> -->
+        <img :src="zimgurl" alt="">
+        <span>{{zp}}</span>
         <p>11111111111</p>
     </div>  
 </div>
@@ -30,7 +31,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .ziBox{
-    width: 90%;
+    width: 95%;
     margin:0.1rem auto 0;    
 }
 .divBox{
@@ -39,7 +40,7 @@ export default {
     font-size: 0;
 }
 .divBox>img{
-    width: 1.3rem;
+    width: 1.1rem;
     height:1.2rem;
 }
 .divBox>span{   
