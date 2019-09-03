@@ -2,7 +2,7 @@
   <div>
    <top></top>
    <banner></banner>
-   <clear ></clear>
+   <!-- <clear :arr="arrfu"></clear> -->
   </div>
 </template>
 <script>
@@ -15,6 +15,15 @@ export default {
        banner,
        clear
     },
+    data(){
+    return{
+      arrfu:[]
+    }
+  },
+  //   created(){
+  //     this.arrfu=this.$route.params.arr;
+  //     console.log( this.arrfu)
+  // }
 }
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->

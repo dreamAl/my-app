@@ -23,7 +23,8 @@ div{
   left:0;
   top:0;
   background:white;
-  border-bottom:#ccc 0.01rem solid ;  
+  border-bottom:#ccc 0.01rem solid ;
+  z-index: 10;  
 }
  div>a:nth-of-type(1){
    font-size: 0.3rem;

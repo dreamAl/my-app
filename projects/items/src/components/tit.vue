@@ -1,7 +1,7 @@
 <template>
 <div>
 <router-link to="/cont">
-    <div class="box" v-for="(v,i) in arr" :key="i">
+    <div class="box" v-for="(v,i) in arr" :key="i" @click="fun(i)">
       <div class="left">
         <h3>{{arr[i].title}}</h3>
         <!-- <slot name="slota"></slot> -->
@@ -21,7 +21,8 @@
 export default {
    data(){
        return{
-           arr:[]
+           arr:[],
+           paonum:[]
        }
    },
     created(){
@@ -46,7 +47,17 @@ export default {
                 return arrb
             }
             
-        },   
+        },  
+        methods:{
+            fun(val){
+               this.paonum =this.arr.filter((v,i)=>{
+                    if(i==val){
+                        return this.arr[i]
+                    }
+                })
+                 this.$router.push({name:'cont',params:{arr:this.paonum}})
+            }
+        } 
 }
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->

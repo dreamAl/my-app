@@ -12,7 +12,7 @@ import icon from '../douban/icon'
 import usa from '../douban/usa'
 import news from '../douban/news'
 import cont from '../douban/cont'
-// import clear from '../douban/clear'
+// import clear from '../components/clear'
 
 Vue.use(Router)
 export default new Router({
@@ -72,14 +72,9 @@ export default new Router({
       component: news
     },  
     {
-      path: '/cont',
+      path: '/cont/:arr',
       name: 'cont',
       component: cont
-    }, 
-    // {
-    //   path: '/clear',
-    //   name: 'clear',
-    //   component: clear
-    // }, 
+    }
   ]
 })

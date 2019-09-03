@@ -8,7 +8,7 @@
 </template>
 <script>
 export default {
-
+  
 }
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -18,10 +18,10 @@ export default {
     position: absolute;
     top:0.6rem;
     font-size: 0px;
+    overflow: hidden;
 }
-div>img{
-   display: inline-block;
-   height:0.8rem;   
+.bannera>img{
+   max-width: 100%;   
 }
 p{
     font-size: 0.12rem;

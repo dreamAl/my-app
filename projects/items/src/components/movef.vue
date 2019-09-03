@@ -1,12 +1,13 @@
 <template>
-    <div>
+    <div >
        <div class="fuBox"  >
-            <span>影院热映</span>
+            <span>{{titname}}</span>
             <a href="#">更多</a>
         </div>
         <div class="xh"  >
-            <movez  v-for="(v, i) in fuprops" :key="i" :zp="v.film_name"  :zimgurl="v.film_img" ></movez>     
-            <!-- <movez></movez> -->
+            <movez  v-for="(v, i) in fuprops" :key="i" :zp="v.film_name"  :zimgurl="v.film_img" 
+            :pf="v.score" :scor="v.score"
+         ></movez>     
         </div>                    
     </div>
 </template>
@@ -15,27 +16,22 @@ import movez from './movez'
 export default {   
     components:{
         movez
-    },
-    props:["fuprops"]
-    // props:{
-    //     fuprops:{
-    //         type:Array,
-    //         required:true
-    //     }
-    // }
+    }, 
+    props:["fuprops","titname"] 
 }
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .xh{
+    margin: 0 auto;
      display: flex;
     overflow: auto;    
 }
-.fuBox{
-    width: 90%;
-    margin: 0.8rem auto 0;
+.fuBox{ 
+    width: 90%;  
+    margin: 0 auto ;    
     display: flex;
-    justify-content: space-between;   
+    justify-content: space-between;
 }
 .fuBox>span{
     font-size: 0.15rem;

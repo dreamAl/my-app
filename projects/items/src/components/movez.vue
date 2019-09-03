@@ -1,20 +1,20 @@
 <template>
 <div class="ziBox">
     <div class="divBox">
-        <!-- <img src="../../static/img/10.jpg" alt=""> -->
         <img :src="zimgurl" alt="">
         <span>{{zp}}</span>
-        <p>11111111111</p>
+        <p class="pfBox">
+            <five-star :fivexx="pf"></five-star>
+            <span >{{scor}}</span>
+        </p>
     </div>  
-</div>
-    
+</div>   
 </template>
 <script>
+import fiveStar from './fiveStar'
 export default {
-    data() {
-        return{
-            arr:[]
-        }
+    components:{
+        fiveStar
     },
     props:{
         zimgurl:{
@@ -24,6 +24,14 @@ export default {
         zp:{
             type:String,
             require:true
+        },
+         pf:{
+            type:String,
+            require:true
+        },
+        scor:{
+              type:String,
+            require:true
         }
     },
 }
@@ -32,7 +40,7 @@ export default {
 <style scoped>
 .ziBox{
     width: 95%;
-    margin:0.1rem auto 0;    
+    margin:0.1rem auto ;    
 }
 .divBox{
     width: 1.3rem;  
@@ -41,13 +49,27 @@ export default {
 }
 .divBox>img{
     width: 1.1rem;
-    height:1.2rem;
+    height:1.5rem;
 }
 .divBox>span{   
     display: block;
     font-size: 0.15rem;
+    width: 90%;
+    margin:0 auto; 
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .divBox>p{   
     font-size: 0.16rem;
+}
+.pfBox{
+    width: 90%;
+    margin:0 auto; 
+    display: flex;
+    justify-content: space-between;
+}
+.pfBox>span{
+    font-size: 0.15rem;
 }
 </style>
