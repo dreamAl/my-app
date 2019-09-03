@@ -4,26 +4,22 @@
      <top></top>
      <cent></cent>
      <div>
-        <tit >
-            <caoa slot="slota"></caoa>
-            <caob slot="slotb"></caob>           
-        </tit>
-     </div>     
+        <tit ></tit>
+     </div> 
+    <foot></foot>
   </div>
 </template>
 <script>
 import top from '../components/top'
 import cent from '../components/cent'
 import tit from '../components/tit'
-import caoa from '../components/caoa'
-import caob from '../components/caob'
+import foot from '../components/foot'
 export default {
     components:{
        top ,
        cent,
        tit,
-       caoa,
-       caob
+    foot
     },
     data(){
         return{

@@ -6,3 +6,5 @@ Mock.mock("/a","get",require("./json/a.json"))
 Mock.mock("/dy","get",require("./json/faxianhaodianying.json"))
 Mock.mock("/fenlan","get",require("./json/fenlan.json"))
 Mock.mock("/book","get",require("./json/book.json"))
+Mock.mock("/xiaozua","get",require("./json/xiaozua.json"))
+
