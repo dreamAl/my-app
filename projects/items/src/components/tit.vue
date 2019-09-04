@@ -1,7 +1,8 @@
 <template>
-<div>
-<router-link to="/cont">
-    <div class="box" v-for="(v,i) in arr" :key="i" @click="fun(i)">
+<div>    
+    <img src="../../static/img/green.gif" v-if="arr.length<=0" class="whites">  
+<router-link to="/cont" v-else>
+    <div class="box" v-for="(v,i) in arr" :key="i" @click="fun(i)" >
       <div class="left">
         <h3>{{arr[i].title}}</h3>
         <p class="conts">{{jqfun[i]}}</p> 
@@ -24,7 +25,8 @@ export default {
        }
    },
     created(){
-        this.axios({
+        setTimeout(()=>{
+            this.axios({
             method:"get",
             url:"/shouyed"
         }).then(
@@ -32,6 +34,9 @@ export default {
                 console.log(data.data.shouyed)
                 this.arr=data.data.shouyed
                 })
+
+        },3000)
+        
         },
         computed: {
             jqfun(){             
@@ -60,6 +65,7 @@ export default {
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
 .box{
     width: 95%;
     height:1.5rem;

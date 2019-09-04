@@ -1,7 +1,8 @@
 <template>
   <div>
    <top></top>
-   <div style="margin-top:0.7rem">
+    <img src="../../static/img/green.gif" v-if="arr.length<=0" class="whites">  
+   <div style="margin-top:0.7rem"  v-else>
       <parbook titname="最受关注图书 | 虚构类" :fuprops="arra"></parbook>
       <parbook titname="最受关注图书 | 非虚构类" :fuprops="arrb"></parbook>
       <bookz ></bookz>
@@ -45,7 +46,8 @@ export default {
       }      
     },
     created(){
-      this.axios({
+      setTimeout(()=>{
+         this.axios({
             mothod:"get",
             url:"/book"
         }).then((data)=>{
@@ -85,6 +87,9 @@ export default {
             console.log(data.data)
             this.obj=(data.data)
         });
+
+      },3000)
+     
     }
 }
 </script>

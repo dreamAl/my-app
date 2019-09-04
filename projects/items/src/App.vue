@@ -25,4 +25,12 @@ a{
 ul li{
   list-style:none;
 }
+.whites{
+    display: block;
+   position: absolute;
+   top:2.5rem;
+   left:1rem;
+    width: 0.6rem;
+    height:0.6rem;
+}
 </style>

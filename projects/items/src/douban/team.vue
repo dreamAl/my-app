@@ -2,9 +2,11 @@
   <div>
    <top></top>
    <div class="logbox">
-      <log><router-link to="/login">  </router-link></log>
+     <log></log>
+     <!-- <router-link to="/login">  </router-link> -->   
    </div>
-   <div>
+   <img src="../../static/img/green.gif" v-if="obj.length<=0" class="whites"> 
+   <div v-else>  
      <fugroup futit="租房找室友"  fuoot="更多相关小组" :teamp="obj"></fugroup>
      <fugroup futit="来聊五块钱" fuoot="来聊五块钱" :teamp="obja"></fugroup>
      <fugroup futit="买买买" fuoot="更多相关小组" :teamp="objb"></fugroup>
@@ -35,7 +37,8 @@ export default {
         }
     },
       created(){
-        this.axios({
+        setTimeout(()=>{
+           this.axios({
             method:"get",
             url:"/xiaozua"
         }).then((ok)=>{
@@ -56,6 +59,7 @@ export default {
             this.objb=ok.data.xiaozuc
             });
 
+        },3000)
     }
 
 }

@@ -60,7 +60,7 @@ export default {
 <style scoped>
 .cleara{
     font-size: 0rem;
-    margin: 1.7rem 0 0 0.1rem;
+    margin: 1.5rem 0 0 0.1rem;
     width: 3.5rem;
 
 }

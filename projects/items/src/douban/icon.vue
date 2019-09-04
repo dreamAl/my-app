@@ -1,7 +1,8 @@
 <template>
   <div>
     <sqcen></sqcen>
-    <div class="diva">
+    <img src="../../static/img/green.gif" v-if="arri.length<=0" class="whites">  
+    <div class="diva" v-else>
       <consp  v-for="(v, i) in arri" :key="i" :titurl="v.url" :tita="v.name" 
       :titb="v.des" :titd="v.color"></consp>
     </div>
@@ -29,13 +30,17 @@ export default {
         }
     },
   created(){
-        this.axios({
+    setTimeout(()=>{
+      this.axios({
             mothod:"get",
             url:"/searchClass"
         }).then((data)=>{
             console.log(data.data)
             this.arri=data.data
             })
+
+    },3000)
+        
     }
   
 }
