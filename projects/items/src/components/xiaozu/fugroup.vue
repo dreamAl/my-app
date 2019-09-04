@@ -1,20 +1,14 @@
 <template>
     <div class="minb">
-        <p>租房找室友</p>
-        <!-- <zigroup></zigroup> -->
-        <div class="box">
-       <div>
-            <p> 
-               <!-- <img src="../../../static/img/7.jpg" alt=""> -->
-               <img :src="obj[0].images.small" alt="">
-                <!-- <span>成都租房</span> -->
-                <span>obj[0].title</span>
-            </p>
-          <span>{{obj[0].group_member}}</span>
-        </div>
-        <p>{{obj[0].group_topic.title}}</p> 
+        <p>{{futit}}</p>    
+    <div class="box" v-for="(v, i) in teamp" :key="i">
+       <zigroup :imgurl="v.images.small" :booktit="v.title"
+        :bookper="v.group_member" :time="v.group_topic.time" :bookcont="v.group_topic.title"></zigroup>
     </div>
+    <div class="boxh">
+        <a href="#">{{fuoot}}</a>
     </div>
+   </div>
 </template>
 <script>
 import zigroup from './zigroup'
@@ -22,27 +16,27 @@ export default {
     components:{
         zigroup
     },
-    data(){
-        return{
-            obj:[]
-        }
+    props:{
+        futit:{
+            type:String,
+            require:true
+        },
+        fuoot:{
+            type:String,
+            require:true
+        },
+        teamp:{
+        type:Array,
+        required:true
+      }
     },
-    created(){
-        this.axios({
-            method:"get",
-            url:"/xiaozua"
-        }).then((ok)=>{
-            // console.log(ok.data.xiaozua)
-            this.obj=ok.data.xiaozua
-            })
-    }
 }
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .minb{
     width:100%;
-     padding:0.4rem 0;
+     padding:0.3rem 0;
 }
  p{
      width: 90%;
@@ -50,35 +44,14 @@ export default {
      font-size: .15rem;
      color:#111111;
  }
- .box{
-        width: 90%;
-        margin:0 auto;
-        font-size:0;
-        border-bottom: 0.01rem solid #ccc;
-       
+ .boxh{
+     text-align: center;
+     font-size: 0;
+    margin:0.1rem 0 0.3rem;
     }
-    .box>div{
-        display: flex;
-        justify-content: space-between;
-    }
-    .box>div>p>img{
-        width: 0.48rem;
-        height:0.48rem;
-        vertical-align: middle;
-        margin-right:0.1rem;
-    }
-    .box>div>p>span{
-        font-size:.18rem;
-        color:#111111;
-        vertical-align: middle;
-    }
-    .box>div>span{
-        font-size:.14rem;
-        color:#cccccc;
-        margin-top:0.2rem;
-    }
-    .box>p{
-        font-size:.15rem;
-        color:#AAAAAA;
-    }
+ .boxh>a{
+     display: inline-block;
+     font-size: 0.14rem;
+     color:#42bd56;
+ }
 </style>

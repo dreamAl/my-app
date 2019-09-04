@@ -20,7 +20,7 @@ export default {
        cent,
        tit,
     foot
-    },
+    }, 
     data(){
         return{
             text:""

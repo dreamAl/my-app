@@ -2,7 +2,7 @@
 	{
 		"name":"电影",
 		"des":"影院热映",
-		"url":"/movie",
+		"url":"/move",
 		"color":"rgb(35, 132, 232)"
 	},
 	{

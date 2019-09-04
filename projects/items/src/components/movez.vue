@@ -16,24 +16,25 @@ export default {
     components:{
         fiveStar
     },
-    props:{
-        zimgurl:{
-            type:String,
-            require:true
-        },
-        zp:{
-            type:String,
-            require:true
-        },
-         pf:{
-            type:String,
-            require:true
-        },
-        scor:{
-              type:String,
-            require:true
-        }
-    },
+    props:["zimgurl","zp","pf","scor"]
+    // props:{
+    //     zimgurl:{
+    //         type:String,
+    //         require:true
+    //     },
+    //     zp:{
+    //         type:String,
+    //         require:true
+    //     },
+    //      pf:{
+    //         type:String,
+    //         require:true
+    //     },
+    //     scor:{
+    //           type:String,
+    //         require:true
+    //     }
+    // },
 }
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->

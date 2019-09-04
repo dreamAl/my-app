@@ -1,12 +1,12 @@
 <template>
   <div class="cleara">      
       <h2>{{arr[0].title}}</h2>
-      <!-- <span  class="spa">{{arr[0].loc_name}}</span>
+      <span  class="spa">{{arr[0].loc_name}}</span>
       <img :src="arr[0].image" alt="">
       <div class="divb">
         <span >时间：&nbsp;&nbsp;</span>
         <ul class="ula">
-          <li>{{arr[0].time_str}}</li>
+          <li>{{arr[0].time_str}}</li> 
           <li>2019-10-21 19:00:00</li>
         </ul>    
       </div> 
@@ -42,17 +42,20 @@
       <a href="#">策展</a>
     </div> 
     <h4>活动详情</h4>
-    <div class="divd">      
-      {{arr[0].content}}
-    </div>     -->
+    <div class="divd" v-html="arr[0].content"></div>    
   </div>
 </template>
 <script>
 export default {
-  props:["arr"]
+  props:{
+    arr:{
+      type:Array,
+      required:true
+    }
+  }
   
-}
-</script>
+} 
+</script> 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .cleara{

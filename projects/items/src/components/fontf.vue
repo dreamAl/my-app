@@ -10,7 +10,7 @@
         </div>      
 </div>
 </template>
-<script>
+<script>  
 import fontz from './fontz'
 export default {
     components:{

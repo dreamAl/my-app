@@ -6,7 +6,7 @@
         </h1>
         <div class="tishi">{{text}}</div>
         <input type="email" v-model="email" placeholder="邮箱"/>
-        <input type="password" v-model="pwd" placeholder="密码"/>
+        <input type="password" v-model="pwd" placeholder="密码"  class="namea"/>
         <span @click="fun()">
           <img src="../../static/img/show-pwd.png" v-if="bool">
           <img src="../../static/img/show-pwds.png" v-else>
@@ -84,9 +84,18 @@ export default {
         width: 87%;
         height: .5rem;
         margin: 0 5%;
-        border: 1px solid #ccc;
-        font-size: .18rem;
+        outline: none;
+        border:none;
+        border-top: 1px solid #ccc;
+        border-left: 1px solid #ccc;
+        border-right: 1px solid #ccc;
+        border-top-left-radius: 0.04rem;
+        border-top-right-radius: 0.04rem;
+        font-size: .16rem;
         padding-left: 3%; 
+    }
+    .namea{
+      border-bottom: 1px solid #ccc;
     }
     input[type="email"]{
         margin-top: .4rem;

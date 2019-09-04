@@ -9,10 +9,7 @@ import book from '../douban/book'
 import bc from '../douban/bc'
 import team from '../douban/team'
 import icon from '../douban/icon'
-import usa from '../douban/usa'
-import news from '../douban/news'
 import cont from '../douban/cont'
-// import clear from '../components/clear'
 
 Vue.use(Router)
 export default new Router({
@@ -62,17 +59,7 @@ export default new Router({
       component: icon
     },   
     {
-      path: '/usa',
-      name: 'usa',
-      component: usa
-    }, 
-    {
-      path: '/news',
-      name: 'news',
-      component: news
-    },  
-    {
-      path: '/cont/:arr',
+      path: '/cont',
       name: 'cont',
       component: cont
     }

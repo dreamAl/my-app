@@ -3,11 +3,7 @@
    <top></top>
    <banner></banner>
    <log></log>
-   <gb></gb>
-   <gb></gb>
-   <gb></gb>
-   <gb></gb>
-   <gb></gb>
+   <gb v-for="i in 9" :key="i"></gb>
    <div class="gba">
      <a href="#">显示更多广播</a>
    </div>

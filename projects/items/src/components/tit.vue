@@ -4,13 +4,11 @@
     <div class="box" v-for="(v,i) in arr" :key="i" @click="fun(i)">
       <div class="left">
         <h3>{{arr[i].title}}</h3>
-        <!-- <slot name="slota"></slot> -->
         <p class="conts">{{jqfun[i]}}</p> 
       </div>   
         <img :src="arr[i].image" alt="">        
         <p>
             <span>{{arr[i].category_name}}</span>
-            <!-- <slot name="slotb"></slot> -->
             <span class="spanss">{{arr[i].tags}}</span> 
         </p>        
     </div>
@@ -55,7 +53,7 @@ export default {
                         return this.arr[i]
                     }
                 })
-                 this.$router.push({name:'cont',params:{arr:this.paonum}})
+                 this.$router.push({name:'cont',query:{arr:this.paonum}})
             }
         } 
 }

@@ -1,7 +1,7 @@
 <template>
   <div>
     <a href="#" @click="fun()">取消</a>
-  </div>
+  </div>     
 </template>
 
 <script>

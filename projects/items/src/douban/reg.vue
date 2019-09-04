@@ -8,7 +8,7 @@
                   <img src="../../static/img/show-pwd.png" v-if="bool">
                   <img src="../../static/img/show-pwds.png" v-else>
           </span>
-        <input type="text" v-model="name" placeholder="用户名">
+        <input type="text" v-model="name" placeholder="用户名" class="namea">
         <input type="button" value="立即注册" @click="submitForm()">
         <p class="footer">点击「注册」代表你已阅读并同意用户使用协议</p>
         <a class="xiaapp" href="#">下载豆瓣App</a>
@@ -65,7 +65,7 @@ export default {
 .title{
         width: 100%;
         height: .46rem;
-        font-size: .4rem;
+        font-size: .35rem;
         text-align: center;
         margin: .35rem 0;
         color: #42bd56;
@@ -74,9 +74,18 @@ export default {
         width: 87%;
         height: .5rem;
         margin: 0 5%;
-        border: 1px solid #ccc;
-        font-size: .18rem;
+        outline: none;
+        border:none;
+        border-top: 1px solid #ccc;
+        border-left: 1px solid #ccc;
+        border-right: 1px solid #ccc;
+        border-top-left-radius: 0.04rem;
+        border-top-right-radius: 0.04rem;
+        font-size: .16rem;
         padding-left: 3%; 
+    }
+    .namea{
+      border-bottom: 1px solid #ccc;
     }
     input[type="email"]{
         margin-top: .24rem;
