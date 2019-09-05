@@ -1,23 +1,30 @@
 <template>
 <div>    
     <img src="../../static/img/green.gif" v-if="arr.length<=0" class="whites">  
-<router-link to="/cont" v-else>
+<div v-else>
+<router-link to="/cont" >
     <div class="box" v-for="(v,i) in arr" :key="i" @click="fun(i)" >
       <div class="left">
-        <h3>{{arr[i].title}}</h3>
+        <h3>{{arr[i].title}}</h3>  
         <p class="conts">{{jqfun[i]}}</p> 
       </div>   
-        <img :src="arr[i].image" alt="">        
+        <img :src="arr[i].image" alt="" class="imgs">        
         <p>
             <span>{{arr[i].category_name}}</span>
             <span class="spanss">{{arr[i].tags}}</span> 
         </p>        
     </div>
-</router-link>   
+</router-link> 
+<foot></foot>
+</div>  
 </div>
 </template>
 <script>
+import foot from '../components/foot'
 export default {
+    components:{
+        foot
+    },
    data(){
        return{
            arr:[],
@@ -35,8 +42,7 @@ export default {
                 this.arr=data.data.shouyed
                 })
 
-        },3000)
-        
+        },2000)       
         },
         computed: {
             jqfun(){             
@@ -98,7 +104,7 @@ p{
     color:#494949;
     font-weight: 100;
 }
-img{
+.imgs{
     float:right;
     width:0.7rem;
     height:1rem;

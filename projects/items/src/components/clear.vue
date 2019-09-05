@@ -6,9 +6,9 @@
       <div class="divb">
         <span >时间：&nbsp;&nbsp;</span>
         <ul class="ula">
-          <li>{{arr[0].time_str}}</li> 
-          <li>2019-10-21 19:00:00</li>
-        </ul>    
+          <li>{{arr[0].begin_time}}</li> 
+          <li>{{arr[0].end_time}}</li>
+        </ul>        
       </div> 
       <div class="divb">
         <span >地点：&nbsp;&nbsp;</span>

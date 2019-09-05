@@ -6,13 +6,15 @@
      <!-- <router-link to="/login">  </router-link> -->   
    </div>
    <img src="../../static/img/green.gif" v-if="obj.length<=0" class="whites"> 
-   <div v-else>  
+   <div v-else>
+   <div >  
      <fugroup futit="租房找室友"  fuoot="更多相关小组" :teamp="obj"></fugroup>
      <fugroup futit="来聊五块钱" fuoot="来聊五块钱" :teamp="obja"></fugroup>
      <fugroup futit="买买买" fuoot="更多相关小组" :teamp="objb"></fugroup>
    </div>
    <div>
      <foot></foot>
+   </div>
    </div>
   </div>
 </template>  
@@ -58,8 +60,7 @@ export default {
         }).then((ok)=>{
             this.objb=ok.data.xiaozuc
             });
-
-        },3000)
+        },2000)
     }
 
 }

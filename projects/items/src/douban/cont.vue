@@ -17,7 +17,7 @@ export default {
        banner,
        clear,
        foot
-    },
+    },   
     data(){ 
     return{
       arrfu:[]
@@ -25,7 +25,7 @@ export default {
   },
     created(){
       this.arrfu=this.$route.query.arr;
-      console.log( this.arrfu)
+      // console.log( this.arrfu)
   }
 }
 </script>

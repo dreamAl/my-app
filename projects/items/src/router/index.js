@@ -10,6 +10,8 @@ import bc from '../douban/bc'
 import team from '../douban/team'
 import icon from '../douban/icon'
 import cont from '../douban/cont'
+import xqmove from '../douban/xqmove'
+
 
 Vue.use(Router)
 export default new Router({
@@ -62,6 +64,11 @@ export default new Router({
       path: '/cont',
       name: 'cont',
       component: cont
+    },
+    {
+      path: '/xqmove',
+      name: 'xqmove',
+      component: xqmove
     }
   ]
 })

@@ -6,11 +6,12 @@
     </div>
         <div class="fontBox">
             <fontz  v-for="(v,i) in fuprops"  :key="i"  :ahref="v.href" :atit="v.title" 
-             :style='{color:v.color}' ></fontz>
+             :style='{color:v.color}' v-if='!v.line'></fontz>
+             <br v-else>
         </div>      
 </div>
 </template>
-<script>  
+<script>   
 import fontz from './fontz'
 export default {
     components:{
@@ -49,8 +50,8 @@ export default {
 }
 .fontBox{
     font-size: 0;
-    display: flex;
-    flex-wrap: nowrap;
+    white-space: nowrap;
     overflow: auto;
 }
+
 </style>

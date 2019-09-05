@@ -2,7 +2,8 @@
   <div>
     <sqcen></sqcen>
     <img src="../../static/img/green.gif" v-if="arri.length<=0" class="whites">  
-    <div class="diva" v-else>
+    <div v-else>
+    <div class="diva" >
       <consp  v-for="(v, i) in arri" :key="i" :titurl="v.url" :tita="v.name" 
       :titb="v.des" :titd="v.color"></consp>
     </div>
@@ -13,6 +14,7 @@
     <div class="divf divft">
         <a href="#">使用桌面版</a>
         <a href="#">使用豆瓣APP</a>
+    </div>
     </div>    
   </div>
 </template>
@@ -38,11 +40,8 @@ export default {
             console.log(data.data)
             this.arri=data.data
             })
-
-    },3000)
-        
-    }
-  
+    },1000)        
+    } 
 }
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->

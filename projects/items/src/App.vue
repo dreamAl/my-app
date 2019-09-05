@@ -27,10 +27,6 @@ ul li{
 }
 .whites{
     display: block;
-   position: absolute;
-   top:2.5rem;
-   left:1rem;
-    width: 0.6rem;
-    height:0.6rem;
+    margin-left:1.2rem;
 }
 </style>

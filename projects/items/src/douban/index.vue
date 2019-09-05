@@ -6,20 +6,17 @@
      <div>
         <tit ></tit>
      </div> 
-    <foot></foot>
   </div>
 </template>
 <script>
 import top from '../components/top'
 import cent from '../components/cent'
 import tit from '../components/tit'
-import foot from '../components/foot'
 export default {
     components:{
        top ,
        cent,
        tit,
-    foot
     }, 
     data(){
         return{

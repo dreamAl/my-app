@@ -18,8 +18,7 @@ export default{
         padding:0 0.1rem;
         border:0.01rem solid rgb(255, 172, 45);
         border-radius: 0.05rem; 
-        margin-left: 0.05rem;  
+        margin:0.05rem 0  0.1rem 0.05rem;
         flex-shrink: 0;     
     }
-
 </style>

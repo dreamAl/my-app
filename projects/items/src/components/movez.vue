@@ -7,34 +7,17 @@
             <five-star :fivexx="pf"></five-star>
             <span >{{scor}}</span>
         </p>
-    </div>  
+    </div>   
 </div>   
 </template>
 <script>
 import fiveStar from './fiveStar'
 export default {
-    components:{
+    components:{ 
         fiveStar
     },
-    props:["zimgurl","zp","pf","scor"]
-    // props:{
-    //     zimgurl:{
-    //         type:String,
-    //         require:true
-    //     },
-    //     zp:{
-    //         type:String,
-    //         require:true
-    //     },
-    //      pf:{
-    //         type:String,
-    //         require:true
-    //     },
-    //     scor:{
-    //           type:String,
-    //         require:true
-    //     }
-    // },
+    
+    props:["zimgurl","zp","pf","scor"],
 }
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->

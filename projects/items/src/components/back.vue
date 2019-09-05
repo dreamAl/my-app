@@ -3,7 +3,7 @@
     <a href="#" @click="fun()">取消</a>
   </div>     
 </template>
-
+  
 <script>
 export default {
   methods:{

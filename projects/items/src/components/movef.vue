@@ -4,10 +4,11 @@
             <span>{{titname}}</span>
             <a href="#">更多</a>
         </div>
-        <div class="xh"  >
-            <movez  v-for="(v, i) in fuprops" :key="i" :zp="v.film_name"  :zimgurl="v.film_img" 
-            :pf="v.score" :scor="v.score"
-         ></movez>     
+        <div class="xh">
+            <div v-for="(v, i) in fuprops" :key="i"  @click="zimove(i)">
+                <movez  :zp="v.film_name"  :zimgurl="v.film_img" 
+            :pf="v.score" :scor="v.score"></movez>     
+            </div>               
         </div>                    
     </div>
 </template>
@@ -16,8 +17,23 @@ import movez from './movez'
 export default {   
     components:{
         movez
-    }, 
-    props:["fuprops","titname"] 
+    },  
+    data(){
+        return{
+            movexq:[]
+        }
+    },   
+    methods:{
+        zimove(val){
+            this.movexq=this.fuprops.filter((v,i)=>{
+                if(i==val){
+                    return this.fuprops[i]
+                }
+            })
+            this.$router.push({name:'xqmove',query:{arr:this.movexq}})
+        }
+    },   
+    props:["fuprops","titname"],
 }
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->

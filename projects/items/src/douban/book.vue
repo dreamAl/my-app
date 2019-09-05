@@ -1,8 +1,7 @@
 <template>
   <div>
-   <top></top>
-    <img src="../../static/img/green.gif" v-if="arr.length<=0" class="whites">  
-   <div style="margin-top:0.7rem"  v-else>
+   <top></top>   
+   <div style="margin-top:0.7rem"  >
       <parbook titname="最受关注图书 | 虚构类" :fuprops="arra"></parbook>
       <parbook titname="最受关注图书 | 非虚构类" :fuprops="arrb"></parbook>
       <bookz ></bookz>
@@ -11,7 +10,6 @@
    <div>
      <fontf titname="发现好书" :fuprops="arr"></fontf>
    </div>
-     <!-- <bookz ></bookz> -->
    <div>
      <fenlan  :obj="obj"></fenlan>
    </div>
@@ -46,7 +44,6 @@ export default {
       }      
     },
     created(){
-      setTimeout(()=>{
          this.axios({
             mothod:"get",
             url:"/book"
@@ -86,10 +83,7 @@ export default {
         }).then((data)=>{
             console.log(data.data)
             this.obj=(data.data)
-        });
-
-      },3000)
-     
+        });     
     }
 }
 </script>
