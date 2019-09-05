@@ -4,14 +4,14 @@
        <banner></banner>
        <div class="geli">
            <div class="pfbox">
-               <h4>{{fumove[0].film_name}}</h4> 
+               <h4>{{fumove[0].title}}</h4> 
             <p>
                 <van-rate v-model="value" readonly />
-                <span>&nbsp;{{fumove[0].score}} &nbsp;</span>
-               <span>{{fumove[0].score_number}}人评价</span>
+                <span>&nbsp;{{fumove[0].rating.average}} &nbsp;</span>
+               <span>{{fumove[0].numRaters}}人评价</span>
             </p>
             <h6>
-                <em>{{fumove[0].time_year}}/{{fumove[0].film_type}}/{{fumove[0].actors}}/{{fumove[0].shooting_country}}</em>
+                <em>{{fumove[0].pubdate}}/{{fumove[0].tags.title}}/{{fumove[0].author}}/{{fumove[0].publisher}}</em>
                 <a href="#">用APP查看影人资料</a>
             </h6>
             
@@ -22,8 +22,8 @@
                 <a href="#">看过</a>
             </div> 
             <div class="brief">
-                <b>{{fumove[0].film_name}}的简介</b>
-                <p>{{fumove[0].release_time}}</p>
+                <b>{{fumove[0].title}}的简介</b>
+                <p>{{fumove[0].pubdate}}</p>
             </div> 
             <div class="more">
                 <a href="#">剧情</a>
@@ -31,9 +31,9 @@
                 <a href="#">战争</a>
             </div> 
             <dir class="pict">
-                <p>{{fumove[0].film_name}}的图片</p> 
+                <p>{{fumove[0].title}}的图片</p> 
                 <div class="slid">
-                    <img :src="fumove[0].film_img" v-for=" i in 9" :key="i">  
+                    <img :src="fumove[0].images.small" v-for=" i in 9" :key="i">  
                 </div>                                
             </dir>               
         </div>
@@ -51,13 +51,13 @@ export default {
     },
     data(){
         return{
-            fumove:[],
+            fubook:[],
             value:this.score,
         }
     },
      created(){
-        this.fumove=this.$route.query.arr
-        console.log(this.fumove)
+        this.fubook=this.$route.query.arr
+        console.log(this.fubook)
     },
 }
 </script>

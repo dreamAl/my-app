@@ -6,8 +6,7 @@
         </div>
         <div class="xh">
             <div v-for="(v, i) in fuprops" :key="i"  @click="zimove(i)">
-                <movez  :zp="v.film_name"  :zimgurl="v.film_img" 
-            :pf="v.score" :scor="v.score"></movez>     
+                <movez  :zp="v.film_name"  :zimgurl="v.film_img" :pf="v.score" :scor="v.score"></movez>     
             </div>               
         </div>                    
     </div>

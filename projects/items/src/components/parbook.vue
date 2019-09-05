@@ -5,9 +5,11 @@
             <a href="#">更多</a>
         </div>
         <div class="xh"  >
-            <movez  v-for="(v, i) in fuprops" :key="i" :zp="v.title"  :zimgurl="v.image" 
-            :pf="v.rating.average" :scor="v.rating.average"
-         ></movez>     
+            <div v-for="(v, i) in fuprops" :key="i"   @click="zibook(i)">
+                <movez   :zp="v.title"  :zimgurl="v.image" 
+            :pf="v.rating.average" :scor="v.rating.average"></movez> 
+            </div>
+              
         </div>                    
     </div>
 </template>
@@ -17,6 +19,21 @@ export default {
     components:{
         movez
     }, 
+     data(){
+        return{
+            bookxq:[]
+        }
+    }, 
+     methods:{
+        zibook(val){
+            this.bookxq=this.fuprops.filter((v,i)=>{
+                if(i==val){
+                    return this.fuprops[i]
+                }
+            })
+            this.$router.push({name:'xqbook',query:{arr:this.bookxq}})
+        }
+    },     
     props:["fuprops","titname"] 
 }
 </script>

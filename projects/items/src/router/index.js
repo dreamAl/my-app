@@ -11,6 +11,8 @@ import team from '../douban/team'
 import icon from '../douban/icon'
 import cont from '../douban/cont'
 import xqmove from '../douban/xqmove'
+import xqbook from '../douban/xqbook'
+
 
 
 Vue.use(Router)
@@ -69,6 +71,11 @@ export default new Router({
       path: '/xqmove',
       name: 'xqmove',
       component: xqmove
+    },
+    {
+      path: '/xqbook',
+      name: 'xqbook',
+      component: xqbook
     }
   ]
 })

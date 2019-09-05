@@ -113,7 +113,8 @@ h4{
   color:#072;
 }
 .divd{
-    margin-top: 0.05rem;
+    width: 90%;
+    margin: 0.05rem auto;
    font-size: 0.12rem;
 }
 </style>
