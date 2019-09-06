@@ -6,7 +6,8 @@
            <div class="pfbox">
                <h4>{{fumove[0].film_name}}</h4> 
             <p>
-                <van-rate v-model="fumove[0].score/2" readonly />
+                <van-rate v-model="fumove[0].score" readonly />
+                <!-- <van-rate v-model="j" readonly  /> -->
                 <span>&nbsp;{{fumove[0].score}} &nbsp;</span>
                <span>{{fumove[0].score_number}}人评价</span>
             </p>
@@ -38,7 +39,7 @@
             </dir> 
             <gb v-for="i in 5" :key="i"></gb> 
              <div>
-                <fontf titname="推荐的豆列" :fuprops="arr"></fontf>
+               <foot></foot>    
             </div> 
         </div>
     </div>
@@ -47,19 +48,29 @@
 import top from '../components/top'
 import banner from '../components/banner'
 import gb from '../components/logined/gb'
-import fontf from '../components/fontf'        
+import fontf from '../components/fontf' 
+import foot from '../components/foot'       
+
 export default {
     components:{
         top,
         banner,
         gb,
         fontf,
+        foot
     },
-     props:["fuprops"],
+    // computed: {
+    //     switch(){   
+    //       var j=parseFloat(this.fumove[0].score)
+    //       return  j
+            
+    //     }
+    // },
+     
     data(){
         return{
             fumove:[],
-            arr:[],
+           
         }
     },
      created(){
@@ -67,14 +78,6 @@ export default {
         // console.log(this.fumove.length)
         if(this.fumove.length==15){
         this.$router.push("/move");
-
-        this.axios({
-            method:"get",
-            url:"/dy"
-        }).then((data)=>{
-            this.arr=(data.data.dy)
-            // console.log(data.data.dy)
-        });
     }
  }
 }

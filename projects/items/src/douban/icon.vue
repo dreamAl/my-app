@@ -28,15 +28,21 @@
             <movef titname="影院热映" :fuprops="arra" ></movef>
             <parbook titname="最受关注图书 | 虚构类" :fuprops="arrb"></parbook>
         </div>
+        <div>
+            <foot></foot>
+        </div>
     </div>
 </template>
 <script>
 import sqcen from '../components/sq/sqcen'
 import consp from '../components/sq/consp'
+
 // 键盘按键按下后页面
 import top from '../components/top'
 import movef from '../components/movef'
 import parbook from '../components/parbook'
+import foot from '../components/foot'
+
 export default {
   components:{
     sqcen,
@@ -45,6 +51,7 @@ export default {
     top,
     movef,
     parbook,
+    foot
   },
   data(){
         return{

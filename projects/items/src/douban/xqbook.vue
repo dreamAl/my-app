@@ -6,7 +6,7 @@
            <div class="pfbox">
                <h4>{{fubook[0].title}}</h4> 
             <p>
-                <van-rate v-model="fubook[0].rating.average/2" readonly />
+                <van-rate v-model="fubook[0].rating.average" readonly />
                 <span>&nbsp;{{fubook[0].rating.average}} &nbsp;</span>
                <span>{{fubook[0].numRaters}}人评价</span>
             </p>
@@ -35,30 +35,50 @@
                 <div class="slid">
                     <img :src="fubook[0].image" v-for=" i in 9" :key="i">  
                 </div>                                
-            </dir>               
+            </dir> 
+            <gb v-for="i in 5" :key="i"></gb>  
+            <div>
+                <fontf titname="推荐的豆列" :fuprops="arr"></fontf>
+            </div> 
+            <foot></foot>                   
         </div>
     </div>
 </template>
 <script>
 import top from '../components/top'
 import banner from '../components/banner'
+import gb from '../components/logined/gb'
+import fontf from '../components/fontf'
+import foot from '../components/foot'
 
 export default {
     components:{
         top,
-        banner,        
+        banner,
+        gb,
+        fontf,
+        foot       
     },
     data(){
         return{
             fubook:[],
+            arr:[]
         }
     },
+    props:["fuprops"],
      created(){
         this.fubook=this.$route.query.arr
         // console.log(this.fubook.length)
         if(this.fubook.length==15){
             this.$router.push("/book")
-        }    
+        };
+        this.axios({
+            method:"get",
+            url:"/goodBook"
+        }).then((data)=>{
+            console.log(data.data.goodBook)
+            this.arr=(data.data.goodBook)
+        });    
     }
 }
 </script>
