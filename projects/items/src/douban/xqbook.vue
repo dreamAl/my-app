@@ -4,26 +4,26 @@
        <banner></banner>
        <div class="geli">
            <div class="pfbox">
-               <h4>{{fumove[0].title}}</h4> 
+               <h4>{{fubook[0].title}}</h4> 
             <p>
-                <van-rate v-model="value" readonly />
-                <span>&nbsp;{{fumove[0].rating.average}} &nbsp;</span>
-               <span>{{fumove[0].numRaters}}人评价</span>
+                <van-rate v-model="fubook[0].rating.average/2" readonly />
+                <span>&nbsp;{{fubook[0].rating.average}} &nbsp;</span>
+               <span>{{fubook[0].numRaters}}人评价</span>
             </p>
             <h6>
-                <em>{{fumove[0].pubdate}}/{{fumove[0].tags.title}}/{{fumove[0].author}}/{{fumove[0].publisher}}</em>
+                <em>{{fubook[0].pubdate}}/{{fubook[0].tags.title}}/{{fubook[0].author}}/{{fubook[0].publisher}}</em>
                 <a href="#">用APP查看影人资料</a>
             </h6>
             
-            <img :src="fumove[0].film_img" alt="">          
+            <img :src="fubook[0].image" alt="">          
            </div> 
             <div class="look">
                 <a href="#">想看</a>
                 <a href="#">看过</a>
             </div> 
             <div class="brief">
-                <b>{{fumove[0].title}}的简介</b>
-                <p>{{fumove[0].pubdate}}</p>
+                <b>{{fubook[0].title}}的简介</b>
+                <p>{{fubook[0].pubdate}}</p>
             </div> 
             <div class="more">
                 <a href="#">剧情</a>
@@ -31,9 +31,9 @@
                 <a href="#">战争</a>
             </div> 
             <dir class="pict">
-                <p>{{fumove[0].title}}的图片</p> 
+                <p>{{fubook[0].title}}的图片</p> 
                 <div class="slid">
-                    <img :src="fumove[0].images.small" v-for=" i in 9" :key="i">  
+                    <img :src="fubook[0].image" v-for=" i in 9" :key="i">  
                 </div>                                
             </dir>               
         </div>
@@ -46,13 +46,11 @@ import banner from '../components/banner'
 export default {
     components:{
         top,
-        banner,
-        
+        banner,        
     },
     data(){
         return{
             fubook:[],
-            value:this.score,
         }
     },
      created(){
@@ -96,9 +94,9 @@ line-height: 0.5rem;
 .pfbox>img{
     width: 30%;
     height:1.3rem;
-     float:right;
-     display:block;
-     margin-top:-1.2rem;
+    float:right;
+    display:block;
+    margin-top:-0.8rem;
 }
 .look{
     font-size:0;

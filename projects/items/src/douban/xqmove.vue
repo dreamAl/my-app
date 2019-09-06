@@ -6,7 +6,7 @@
            <div class="pfbox">
                <h4>{{fumove[0].film_name}}</h4> 
             <p>
-                <van-rate v-model="value" readonly />
+                <van-rate v-model="fumove[0].score/2" readonly />
                 <span>&nbsp;{{fumove[0].score}} &nbsp;</span>
                <span>{{fumove[0].score_number}}人评价</span>
             </p>
@@ -35,29 +35,32 @@
                 <div class="slid">
                     <img :src="fumove[0].film_img" v-for=" i in 9" :key="i">  
                 </div>                                
-            </dir>               
+            </dir> 
+            <gb v-for="i in 5" :key="i"></gb> 
+             
         </div>
     </div>
 </template>
 <script>
 import top from '../components/top'
 import banner from '../components/banner'
-
+import gb from '../components/logined/gb'
+        
 export default {
     components:{
         top,
         banner,
-        
+        gb,
+    
     },
     data(){
         return{
             fumove:[],
-            value:this.score,
         }
     },
      created(){
         this.fumove=this.$route.query.arr
-        console.log(this.fumove)
+        // console.log(this.fumove)
     },
 }
 </script>
@@ -98,7 +101,7 @@ line-height: 0.5rem;
     height:1.3rem;
      float:right;
      display:block;
-     margin-top:-1.2rem;
+     margin-top:-1.5rem;
 }
 .look{
     font-size:0;
@@ -130,9 +133,10 @@ line-height: 0.5rem;
 .more>a{
     display:inline-block;
     font-size:0.14rem;
+    color:black;
     padding:0.12rem;
     background:#ccc;
-    border-radius: 0.3rem;
+    border-radius: 0.2rem;
     margin:0.2rem 0.07rem;
 }
 .pict{font-size:0rem;}
@@ -146,6 +150,5 @@ line-height: 0.5rem;
     width: 1rem;
     height: 1rem;
     margin:0.06rem 0.04rem;
-
 }
 </style>

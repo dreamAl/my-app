@@ -69,14 +69,14 @@ export default {
             method:"get",
             url:"/dy"
         }).then((data)=>{
-            console.log(data.data.dy)
+            // console.log(data.data.dy)
             this.arr=(data.data.dy)
         });
         this.axios({
             method:"get",
             url:"/fenlan"
         }).then((data)=>{
-            console.log(data.data)
+            // console.log(data.data)
             this.obj=(data.data)
         });
     },

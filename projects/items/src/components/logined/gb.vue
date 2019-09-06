@@ -58,7 +58,7 @@ export default {
 .boxb{
     width: 70%;
     margin: 0.1rem 0.5rem 0.2rem ;
-    padding: 0.15rem;
+    padding: 0.1rem;
     border-radius: .04rem;
     border: .01rem solid #d8d8d8;
 }
@@ -78,7 +78,7 @@ export default {
 .boxc>span{   
     display: inline-block;
     width: 0.24rem;
-    height:0.24rem;
+    /* height:0.24rem; */
     /* border:0.01rem solid pink; */
 }
 .boxc>span:nth-of-type(1){
@@ -99,7 +99,7 @@ export default {
 .boxc>i{   
     display: inline-block;
     width: 0.24rem;
-    height:0.24rem;
+    /* height:0.24rem; */
     /* border:0.01rem solid yellow; */
     font-size: 0.14rem;
     color:#AAAAAA;

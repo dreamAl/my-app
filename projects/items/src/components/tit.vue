@@ -38,7 +38,7 @@ export default {
             url:"/shouyed"
         }).then(
             (data)=>{
-                console.log(data.data.shouyed)
+                // console.log(data.data.shouyed)
                 this.arr=data.data.shouyed
                 })
 
