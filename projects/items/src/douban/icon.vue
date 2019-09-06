@@ -1,6 +1,7 @@
 <template>
-  <div>
-    <sqcen></sqcen>
+  <div v-if="funum">
+    <!-- 在调用子组件这里创建函数来接收抛出的自定义函数 -->
+    <sqcen @zipao="fu"></sqcen>
     <img src="../../static/img/green.gif" v-if="arri.length<=0" class="whites">  
     <div v-else>
     <div class="diva" >
@@ -17,19 +18,48 @@
     </div>
     </div>    
   </div>
+    <div v-else>
+        <top></top>
+        <div class="sqbox">
+            <input type="text" v-model="futext">
+            <span>搜索</span>
+        </div>
+        <div>
+            <movef titname="影院热映" :fuprops="arra" ></movef>
+            <parbook titname="最受关注图书 | 虚构类" :fuprops="arrb"></parbook>
+        </div>
+    </div>
 </template>
 <script>
 import sqcen from '../components/sq/sqcen'
 import consp from '../components/sq/consp'
+// 键盘按键按下后页面
+import top from '../components/top'
+import movef from '../components/movef'
+import parbook from '../components/parbook'
 export default {
   components:{
     sqcen,
-    consp
+    consp,
+    // 键盘按键按下后页面
+    top,
+    movef,
+    parbook,
   },
   data(){
         return{
-            arri:[]
+            arri:[],
+            arra:[],
+            arrb:[],
+            funum:Boolean ,
+            futext:""           
         }
+    },
+    methods:{
+      fu(val,tst){
+        this.funum=val;
+        this.futext=tst;
+      }
     },
   created(){
     setTimeout(()=>{
@@ -40,9 +70,37 @@ export default {
             console.log(data.data)
             this.arri=data.data
             })
-    },1000)        
+    },1000) ;
+    
+    this.axios({
+            mothod:"get",
+            url:"/a"
+        }).then((data)=>{
+            var arrs=data.data
+            arrs.filter((v,i)=>{
+              if(i<15){
+                this.arra.push(arrs[i])
+              }
+              return
+            })
+        }) ; 
+        this.axios({
+            mothod:"get",
+            url:"/book"
+        }).then((data)=>{
+            var arrs=data.data.book
+            console.log(data.data.book)
+            arrs.filter((v,i)=>{
+              if(i<15){
+                this.arrb.push(arrs[i])
+              }
+              return
+            })
+            })        
+    },
+    props:["fuprops"] 
     } 
-}
+
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
@@ -71,5 +129,20 @@ export default {
 }
 .divft{
   border-top:none;
+}
+.sqbox{
+    border-bottom:0.01rem solid #f2f2f2;
+    }
+.sqbox>input{
+    font-size: .2rem;
+    margin-left:0.05rem;
+    width:2.3rem;
+    height:0.3rem;
+    border:none;
+    border:0.01rem solid #f2f2f2;
+    background:#f3f3f3;
+}
+.sqbox>span{
+    font-size:0.16rem;
 }
 </style>

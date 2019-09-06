@@ -83,20 +83,20 @@ app.post("/login",vE,function(req,res){
         }
     })
 })
-// app.get("/index",function(req,res){
-//     //  解密token：jwt.verify(要验证的token，密文，回调)
-//     //  得到token
-//     var token=req.query.token;
-//     var mi="snjdejimvfnjn";
-//     jwt.verify(token,mi,function(err,data){
-//         console.log(token)
-//         console.log(data)
-//         // 判断loginok是否为true
-//         if(data.loginok==true){
-//             res.send({mes:"登录成功",status:200,linkid:5,name:data.email})
-//         }else{
-//           res.send({mes:"用户没有登录过",status:500,linkid:6})
-//         }
-//     })
-// })
+app.get("/index",function(req,res){
+    //  解密token：jwt.verify(要验证的token，密文，回调)
+    //  得到token
+    var token=req.query.token;
+    var mi="snjdejimvfnjn";
+    jwt.verify(token,mi,function(err,data){
+        // console.log(token)
+        // console.log(data)
+        // 判断loginok是否为true
+        if(data.loginok==true){
+            res.send({mes:"登录成功",status:200,linkid:5,username:data.uname})
+        }else{
+          res.send({mes:"用户没有登录过",status:500,linkid:6})
+        }
+    })
+})
 app.listen(4000)

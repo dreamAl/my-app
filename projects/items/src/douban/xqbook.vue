@@ -55,8 +55,11 @@ export default {
     },
      created(){
         this.fubook=this.$route.query.arr
-        console.log(this.fubook)
-    },
+        // console.log(this.fubook.length)
+        if(this.fubook.length==15){
+            this.$router.push("/book")
+        }    
+    }
 }
 </script>
 <style  scoped>

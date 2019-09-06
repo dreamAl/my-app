@@ -49,7 +49,7 @@ export default {
             arrs.filter((v,i)=>{
               if(i<15){
                 this.arra.push(arrs[i])
-              }
+              }  
               return
             })
             arrs.filter((v,i)=>{

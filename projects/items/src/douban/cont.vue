@@ -26,6 +26,9 @@ export default {
     created(){
       this.arrfu=this.$route.query.arr;
       // console.log( this.arrfu)
+      if(!this.arrfu){
+        this.$router.push("/index");
+      }
   }
 }
 </script>

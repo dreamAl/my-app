@@ -37,7 +37,9 @@
                 </div>                                
             </dir> 
             <gb v-for="i in 5" :key="i"></gb> 
-             
+             <div>
+                <fontf titname="推荐的豆列" :fuprops="arr"></fontf>
+            </div> 
         </div>
     </div>
 </template>
@@ -45,23 +47,36 @@
 import top from '../components/top'
 import banner from '../components/banner'
 import gb from '../components/logined/gb'
-        
+import fontf from '../components/fontf'        
 export default {
     components:{
         top,
         banner,
         gb,
-    
+        fontf,
     },
+     props:["fuprops"],
     data(){
         return{
             fumove:[],
+            arr:[],
         }
     },
      created(){
         this.fumove=this.$route.query.arr
-        // console.log(this.fumove)
-    },
+        // console.log(this.fumove.length)
+        if(this.fumove.length==15){
+        this.$router.push("/move");
+
+        this.axios({
+            method:"get",
+            url:"/dy"
+        }).then((data)=>{
+            this.arr=(data.data.dy)
+            // console.log(data.data.dy)
+        });
+    }
+ }
 }
 </script>
 <style  scoped>

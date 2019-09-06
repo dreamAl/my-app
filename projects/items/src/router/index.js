@@ -13,8 +13,6 @@ import cont from '../douban/cont'
 import xqmove from '../douban/xqmove'
 import xqbook from '../douban/xqbook'
 
-
-
 Vue.use(Router)
 export default new Router({
   routes: [
@@ -76,6 +74,6 @@ export default new Router({
       path: '/xqbook',
       name: 'xqbook',
       component: xqbook
-    }
+    },
   ]
 })

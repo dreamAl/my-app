@@ -13,7 +13,7 @@ export default{
         font-size: 0.14rem;
         width: auto;
         height:0.5rem;
-        line-height: 0.5rem;
+        line-height: 0.5rem;  
         overflow: auto;
         padding:0 0.1rem;
         border:0.01rem solid rgb(255, 172, 45);

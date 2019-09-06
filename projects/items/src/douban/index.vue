@@ -2,7 +2,7 @@
   <div>
      <p>{{text}}</p>
      <top></top>
-     <cent></cent>
+     <cent></cent>  
      <div>
         <tit ></tit>
      </div> 
@@ -23,7 +23,27 @@ export default {
             text:""
         }
     },
-}
+    created(){
+       var gettoken=window.localStorage.getItem("token");
+       if(gettoken){
+            this.$router.push("/index")   
+        }else{
+           alert("请您先登录")
+            this.$router.push("/login") 
+        }
+    }
+
+    }
+    // beforeRouteEnter (to, from, next) {
+    //     var gettoken=window.localStorage.getItem("token");
+    //     if(gettoken){
+    //         next()    
+    //     }else{
+    //        alert("请您先登录")
+    //         next("/login")
+    //     }
+    // }
+
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>

@@ -17,16 +17,17 @@ export default {
     components:{
         fontz
     },
-    props:{
-        fuprops:{
-            type:Array,
-            required:true
-        },
-        titname:{
-            type:String,
-            required:true
-        }
-    }
+    props:["fuprops","titname"]
+    // props:{
+    //     fuprops:{
+    //         type:Array,
+    //         required:true
+    //     },
+    //     titname:{
+    //         type:String,
+    //         required:true
+    //     }
+    // }
 }
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->

@@ -14,7 +14,8 @@
         <input type="button" value="登录" @click="funa()"/>
         <p>使用其他方式登录 & 找回密码</p>
         <div class="footer">
-            <a href="#">注册豆瓣账号</a>
+            <!-- <a href="#">注册豆瓣账号</a> -->
+             <router-link to="./reg"> 注册豆瓣账号</router-link>           
             <a href="#">下载豆瓣App</a>
         </div>
         <logina></logina>

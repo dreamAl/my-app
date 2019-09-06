@@ -1,17 +1,40 @@
 <template>
     <div class="boxa">
         <div class="person">
-             <!-- <router-link to="/login"> -->
-                <router-link to="/login"><img src="../../../static/img/p.jpg" alt="">
-                <b>请先登录</b></router-link> 
+                <router-link to="/login">
+                    <img src="../../../static/img/log.png" alt="" v-if="txt">
+                    <img src="../../../static/img/p.jpg" alt="" v-else>   
+                     <b  v-if="txt"></b>
+                    <b  v-else >请先登录</b>                   
+                </router-link> 
                 <span></span>
                 <span></span>
-             <!-- </router-link>             -->
         </div>           
     </div>
 </template>
 <script>
 export default {
+    data(){
+        return{
+            txt:""
+        }
+    },
+    created(){
+        var getname=window.localStorage.getItem("token")
+        if(getname){
+            this.axios({
+                method:"get",
+                url:"http://localhost:4000/index",
+                params:{
+                    token:getname
+                }
+            }).then((ok)=>{
+                if(ok.data.linkid==5){
+                    this.txt=ok.data.username
+                }
+            })
+        }
+    }
 }
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->

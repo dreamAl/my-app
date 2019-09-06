@@ -1,9 +1,9 @@
 <template>
     <div class="spbox" >
         <a href="#" @click="funi()">关闭</a>
-        <!-- <router-link to="/index">关闭</router-link> -->
         <form >
-            <input type="text" @focus="bool=!bool"  @blur="bool=!bool">
+            <input type="text" @focus="bool=!bool"  @blur="bool=!bool" 
+            @keydown.enter="fund()" v-model="text">
             <span v-if="bool"></span>           
         </form>
     </div>
@@ -13,11 +13,17 @@ export default {
     methods:{
         funi(){
             this.$router.go(-1)
-        }
+        },
+        fund(){
+            // this.$router.push("/linkd")
+            // 在子组件抛出自定义事件监听
+            this.$emit("zipao",this.bool,this.text)
+            }        
     },
     data(){
         return{
-            bool:true
+            bool:true,
+            text:""
         }
     }
 }
@@ -40,11 +46,12 @@ export default {
 
     }
     form>input{
-        font-size: .25rem;
+        font-size: .2rem;
         margin-left:0.1rem;
         width:2.3rem;
         height:0.4rem;
         border:none;
+        /* outline:none; */
         border:0.01rem solid #f2f2f2;
         background:#f3f3f3;
         position: relative;
