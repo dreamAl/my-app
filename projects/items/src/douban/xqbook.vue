@@ -2,11 +2,12 @@
     <div>
        <top></top> 
        <banner></banner>
-       <div class="geli">
+        <img src="../../static/img/green.gif" v-if="arr.length<=0" class="whites">
+       <div class="geli" v-else>
            <div class="pfbox">
                <h4>{{fubook[0].title}}</h4> 
             <p>
-                <van-rate v-model="fubook[0].rating.average" readonly />
+                <van-rate v-model="numa" readonly />
                 <span>&nbsp;{{fubook[0].rating.average}} &nbsp;</span>
                <span>{{fubook[0].numRaters}}人评价</span>
             </p>
@@ -62,23 +63,27 @@ export default {
     data(){
         return{
             fubook:[],
-            arr:[]
+            arr:[],
+            numa:0,
         }
     },
     props:["fuprops"],
      created(){
-        this.fubook=this.$route.query.arr
-        // console.log(this.fubook.length)
-        if(this.fubook.length==15){
-            this.$router.push("/book")
-        };
-        this.axios({
+          this.axios({
             method:"get",
             url:"/goodBook"
         }).then((data)=>{
             console.log(data.data.goodBook)
             this.arr=(data.data.goodBook)
-        });    
+        }); 
+        this.fubook=this.$route.query.arr
+        
+        this.numa=parseFloat(this.fubook[0].rating.average)/2
+
+        if(this.fubook.length==15){
+            this.$router.push("/book")
+        };
+          
     }
 }
 </script>

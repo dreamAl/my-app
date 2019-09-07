@@ -6,7 +6,7 @@
            <div class="pfbox">
                <h4>{{fumove[0].film_name}}</h4> 
             <p>
-                <van-rate v-model="fumove[0].score" readonly />
+                <van-rate v-model="numa" readonly />
                 <!-- <van-rate v-model="j" readonly  /> -->
                 <span>&nbsp;{{fumove[0].score}} &nbsp;</span>
                <span>{{fumove[0].score_number}}人评价</span>
@@ -59,22 +59,16 @@ export default {
         fontf,
         foot
     },
-    // computed: {
-    //     switch(){   
-    //       var j=parseFloat(this.fumove[0].score)
-    //       return  j
-            
-    //     }
-    // },
-     
     data(){
         return{
             fumove:[],
-           
+            numa:0
         }
     },
      created(){
         this.fumove=this.$route.query.arr
+        this.numa=parseFloat(this.fumove[0].score)/2
+                    
         // console.log(this.fumove.length)
         if(this.fumove.length==15){
         this.$router.push("/move");

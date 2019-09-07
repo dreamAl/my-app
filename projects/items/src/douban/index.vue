@@ -23,16 +23,15 @@ export default {
             text:""
         }
     },
-    created(){
-       var gettoken=window.localStorage.getItem("token");
-       if(gettoken){
-            this.$router.push("/index")   
-        }else{
-           alert("请您先登录")
-            this.$router.push("/login") 
-        }
-    }
-
+    // created(){
+    //    var gettoken=window.localStorage.getItem("token");
+    //    if(gettoken){
+    //         this.$router.push("/index")   
+    //     }else{
+    //        alert("请您先登录")
+    //         this.$router.push("/login") 
+    //     }
+    // }
     }
     // beforeRouteEnter (to, from, next) {
     //     var gettoken=window.localStorage.getItem("token");

@@ -4,7 +4,7 @@
                 <router-link to="/login">
                     <img src="../../../static/img/log.png" alt="" v-if="txt">
                     <img src="../../../static/img/p.jpg" alt="" v-else>   
-                     <b  v-if="txt"></b>
+                     <b  v-if="txt">{{txt}}</b>
                     <b  v-else >请先登录</b>                   
                 </router-link> 
                 <span></span>

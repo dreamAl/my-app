@@ -31,31 +31,31 @@ export default {
         },
         // 点击提交按钮发送数据
         submitForm(){
-          if(this.email==''||this.pwd==""||this.name==""){
-            // return
-            this.text="请输入完整信息"
-          }else{
-            // 先实例化对象
-            let param = new URLSearchParams();
-          // 添加发送数据参数：
-          param.append("email",this.email)
-          param.append("pwd",this.pwd)
-          param.append("name",this.name)
-          this.axios.post("http://localhost:4000/reg",param).then(
-            (ok)=>{
-              alert("注册成功")
-              var i = 4;
-                  var mytimer = setInterval(()=>{
-                      i--;
-                      if(i == 0){
-                          clearInterval(mytimer);
-                          this.$router.push("/login");
-                      }
-                      this.text = "注册成功"+i+"秒后跳转";
-                    },1000)
-              }) 
-          }
-          
+          // if(this.email==''||this.pwd==""||this.name==""){
+          //   // return
+          //   this.text="请输入完整信息"
+          // }else{
+          //   // 先实例化对象
+          //   let param = new URLSearchParams();
+          // // 添加发送数据参数：
+          // param.append("email",this.email)
+          // param.append("pwd",this.pwd)
+          // param.append("name",this.name)
+          // this.axios.post("http://localhost:4000/reg",param).then(
+          //   (ok)=>{
+          //     alert("注册成功")
+          //     var i = 4;
+          //         var mytimer = setInterval(()=>{
+          //             i--;
+          //             if(i == 0){
+          //                 clearInterval(mytimer);
+          //                 this.$router.push("/login");
+          //             }
+          //             this.text = "注册成功"+i+"秒后跳转";
+          //           },1000)
+          //     }) 
+          // }
+           this.$router.push("/login")
         }
     },  
 }

@@ -42,30 +42,31 @@ export default {
           this.bool=!this.bool
         },
         funa(){
-                 if(this.email==''&& this.pwd==""){
-            // return
-            this.text="请输入完整信息"
-          }else{
-            // 先实例化对象
-          let param = new URLSearchParams();
-          // 添加发送数据参数：
-          param.append("email",this.email)
-          param.append("pwd",this.pwd)
-          this.axios.post("http://localhost:4000/login",param).then(
-            (ok)=>{      
-              localStorage.setItem("token",ok.data.token)
-              // console.log(ok)
-              var i = 4;
-                  var mytimer = setInterval(()=>{
-                      i--;
-                      if(i == 0){
-                          clearInterval(mytimer);
-                         this.$router.push("/index")
-                      }
-                      this.text = "登录成功"+i+"秒后跳转";
-                    },1000)
-              }) 
-          }
+          //        if(this.email==''&& this.pwd==""){
+          //   // return
+          //   this.text="请输入完整信息"
+          // }else{
+          //   // 先实例化对象
+          // let param = new URLSearchParams();
+          // // 添加发送数据参数：
+          // param.append("email",this.email)
+          // param.append("pwd",this.pwd)
+          // this.axios.post("http://localhost:4000/login",param).then(
+          //   (ok)=>{      
+          //     localStorage.setItem("token",ok.data.token)
+          //     // console.log(ok)
+          //     var i = 4;
+          //         var mytimer = setInterval(()=>{
+          //             i--;
+          //             if(i == 0){
+          //                 clearInterval(mytimer);
+          //                this.$router.push("/index")
+          //             }
+          //             this.text = "登录成功"+i+"秒后跳转";
+          //           },1000)
+          //     }) 
+          // }
+          this.$router.push("/index")
         }
     }, 
 }
